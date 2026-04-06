@@ -35,7 +35,7 @@ const products = [
     name: 'Xiaomi 15 Ultra',
     price: '₹1,09,999',
     description: 'Premium camera and powerful hardware.',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlFZzjW7EqzXgLEMnLojFqcxuW_xTCycaJhA&s'
+    image: 'https://playfuldroid.com/wp-content/uploads/Xiaomi-14-Ultra.png'
   },
   {
     id: '6',

@@ -1,9 +1,11 @@
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import React, { useContext } from 'react'
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
+import { CartContext } from '../context/CartContext'
 
 export default function Details({ navigation, route }) {
 
-  const product = route.params?.product;
+  const { addToCart } = useContext(CartContext)
+  const product = route.params?.product
 
   return (
     <View style={styles.container}>
@@ -14,13 +16,18 @@ export default function Details({ navigation, route }) {
       <Text style={styles.price}>{product.price}</Text>
       <Text style={styles.description}>{product.description}</Text>
 
+      {/* Add to Cart Button */}
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('Cart', { product })}
+        onPress={() => {
+          addToCart(product)
+          navigation.navigate('Main', { screen: 'Cart' })
+        }}
       >
         <Text style={styles.buttonText}>Add To Cart 🛒</Text>
       </TouchableOpacity>
 
+      {/* Go Back Button */}
       <TouchableOpacity
         style={[styles.button, { backgroundColor: '#555' }]}
         onPress={() => navigation.goBack()}
@@ -29,7 +36,7 @@ export default function Details({ navigation, route }) {
       </TouchableOpacity>
 
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -75,4 +82,4 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold'
   }
-});
+})
