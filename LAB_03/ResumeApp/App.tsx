@@ -1,43 +1,42 @@
 import React from 'react';
 import {
-  View,
   Text,
   Image,
   Button,
   Alert,
   StyleSheet,
+  SafeAreaView,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
 
-      {/* Name */}
-      <Text style={styles.name}>Riyan Shrestha</Text>
+        {/* Name */}
+        <Text style={styles.name}>Riyan Shrestha</Text>
 
-      {/* Profile Image */}
-      <Image
-        source={require('./assets/profile.jpg')}
-        style={styles.image}
-      />
+        {/* Profile Image */}
+        <Image
+          source={require('./assets/profile.jpg')}
+          style={styles.image}
+        />
 
-      {/* Resume Details */}
-      <Text style={styles.text}>Course: BCA</Text>
-      <Text style={styles.text}>College: R.V University</Text>
-      <Text style={[styles.text, { marginBottom: 20 }]}>
-        Skills: React Native, Java, Python
-      </Text>
+        {/* Resume Details */}
+        <Text style={styles.text}>Course: BCA</Text>
+        <Text style={styles.text}>College: R.V University</Text>
+        <Text style={[styles.text, { marginBottom: 20 }]}>
+          Skills: React Native, Java, Python
+        </Text>
 
-      {/* Button */}
-      <Button
-        title="Contact Me"
-        onPress={() =>
-          Alert.alert('Email', 'riyanshresthabca24@rvu.edu.in')
-        }
-      />
+        {/* Button */}
+        <Button
+          title="Contact Me"
+          onPress={() =>
+            Alert.alert('Email', 'riyanshresthabca24@rvu.edu.in')
+          }
+        />
 
-    </SafeAreaView>
+      </SafeAreaView>
   );
 };
 
